@@ -8,6 +8,31 @@
 </head>
 <body>
     <%-include('navebar.ejs')%>
-    <h1>Task List pages</h1>
+<div class="container">
+   <h1>Task List pages</h1>
+   <form action="multy-delete" method="post">
+    <button class="delete-item" style="margin-bottom: 10px;">Delete Slected Task</button>
+   <ul class="task-list"> 
+    <% for(let  task=0; task<result.length; task++){ %>
+<li class="task-items">
+    <div class="task-tital">
+<%=result[task].tital%>
+    </div>
+    <div class="task-description">
+<%=result[task].description%>
+    </div>
+    <input type="checkbox" name="slected" value="<%=result[task]._id%>" id="">
+  <a href="/delete/<%=result[task]._id%>" class="delete-item">Delete</a>
+    <a href="/update/<%=result[task]._id%>" class="updates-item">Updates</a> 
+</li>
+
+        <%}%>
+   </ul>
+
+</form>
+</div>
+
+
+ 
 </body>
 </html>

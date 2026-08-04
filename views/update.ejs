@@ -8,6 +8,21 @@
 </head>
 <body>
        <%-include('navebar.ejs')%>
-    <h1>Updates Task</h1>
+  
+
+    <div class="container">
+          <h1 class="taskn">Updates Task</h1>
+<form class="todo-form" action="/update/<%= result._id %>" method="POST">
+
+<input  class="input" value="<%=result.tital%>" type="text" placeholder="Enter Task tital " name="tital">
+<br><br>
+<textarea  class="input" name="description" id=""> <%=result.description%> </textarea>
+
+<br><br>
+<button class="btn">Updates Task</button>
+
+</form>
+</div>
+
 </body>
 </html>
